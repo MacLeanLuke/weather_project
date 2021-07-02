@@ -7,80 +7,15 @@
     font-family: 'Roboto', sans-serif;
 }
 
-nav {
-    background-color: rgba(103, 150, 252, 0.719);
-    color: white;
-    width: 100%;
-    min-height: 80px;
-}
-
 button {
-    background-color: #3a2df3;
-    color: white;
     width: 100px;
-    height: 30px;
     border: 2px solid black;
     box-shadow: 2px 2px black;
-    font-size: 15px;
-    cursor: pointer;
     transition: all .1s ease-in-out;
 }
 
-nav h1 {
-    flex: 3;
-}
-
-#cities {
-    flex: 2;
-    gap: 1.5em;
-}
-
-nav a{
-    color: white;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color: blue;
-}
-
-.container {
-    width: 800px;
-    margin: 50px auto;
-}
-
-.flexed {
-    display: flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.column {
-    flex-direction: column;
-}
-
-.gapped {
-    gap: 10px;
-}
-
-.days {
-    gap: 20px;
-}
-
 .day {
-    width: 100%;
-    min-height: 300px;
     background-color: lightgray;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    padding: 20px;
-
-}
-
-.bottom-row {
-    width: 100%;
 }
 
 .high-temp {

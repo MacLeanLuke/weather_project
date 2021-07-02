@@ -1,82 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <title>Your Current Weather</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-        <nav>
-            <div class="flexed container">
-                <h1>Four Day Weather Forcast</h1>
-                <div id="cities" class="flexed container">
-                    <form class="flexed">
-                        <div class="search">
-                            <div>
-                                <label for="queryCity">Search City:</label>
-                                <input oninput="getCityName(this)" type="text" id="queryCity">
-                            </div>
-                        
-                                <div>
-                                    <label for="unit-choice">Show temperature in...</label>
-                                    <select id="unit-choice">
-                                        <option value="imperial">°F</option>
-                                        <option value="metric">°C</option>
-                                    </select>
-                                </div>
-                            </div>
-                    
-                        <button onclick="search(event)">Search</button>
-                    </form>
-                </div>
-            </div>
-          </nav>
-        <div class="flexed top container">
-            <h1 id="currentCitySearch"></h1>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav
+      class="
+        navbar
+        sticky-top
+        navbar-light navbar-expand{-sm|-md|-lg|-xl|-xxl}
+        row
+        justify-content-center
+      "
+      style="background-color: #e3f2fd"
+    >
+      <div class="col-10 row justify-content-between">
+        <div class="col-lg-9 col-sm-12 row align-items-center">
+          <h1>Four Day Weather Forcast</h1>
         </div>
-        <div class="days flexed container">
-            <div class="day">
-                <h1 id="dayOneName">Today</h1>
-                <img id="dayOneImage" src="./images/sunny.png" alt="Day One Weather">
-                <p id="dayOneWeatherDescr">partly cloudy</p>
-                <div class=" bottom-row flexed">
-                    <p id="dayOneHighTemp" class="temps high-temp">H</p>
-                    <p id="dayOneLowTemp" class="temps low-temp">L</p>
-                </div>
+        <div id="cities" class="col-lg-3 col-sm-12">
+          <form class="mb-3">
+            <div class="search">
+              <div class="p-3">
+                <label class="form-label" for="queryCity">Search City:</label>
+                <input
+                  class="form-control"
+                  oninput="getCityName(this)"
+                  type="text"
+                  id="queryCity"
+                />
+              </div>
+              <div class="p-3">
+                <label class="form-label" for="unit-choice"
+                  >Show temperature in...</label
+                >
+                <select class="form-control" id="unit-choice">
+                  <option value="imperial">°Fahrenheit</option>
+                  <option value="metric">°Celsius</option>
+                </select>
+              </div>
             </div>
-            <div class="day">
-                <h1 id="dayTwoName">Tomorrow</h1>
-                <img id="dayTwoImage" src="./images/sunny.png" alt="Day Two Weather">
-                <p id="dayTwoWeatherDescr">partly cloudy</p>
-                <div class=" bottom-row flexed">
-                    <p id="dayTwoHighTemp" class="temps high-temp">H</p>
-                    <p id="dayTwoLowTemp"  class="temps low-temp">L</p>
-                </div>
+            <div class="p-3">
+              <button class="btn-dark" onclick="search(event)">Search</button>
             </div>
-            <div class="day">
-                <h1 id="dayThreeName">Day Three</h1>
-                <img id="dayThreeImage" src="./images/sunny.png" alt="Day Three Weather">
-                <p id="dayThreeWeatherDescr">partly cloudy</p>
-                <div class=" bottom-row flexed">
-                    <p id="dayThreeHighTemp" class="temps high-temp">H</p>
-                    <p id="dayThreeLowTemp"  class="temps low-temp">L</p>
-                </div>
-            </div>
-            <div class="day">
-                <h1 id="dayFourName">Day Four</h1>
-                <img id="dayFourImage" src="./images/sunny.png" alt="Day Four Weather">
-                <p id="dayFourWeatherDescr">partly cloudy</p>
-                <div class=" bottom-row flexed">
-                    <p id="dayFourHighTemp" class="temps high-temp">H</p>
-                    <p id="dayFourLowTemp" class="temps low-temp">L</p>
-                </div>
-            </div>
+          </form>
         </div>
- 
+      </div>
+    </nav>
+    <main class="container col-10">
+      <div class="row justify-content-center">
+        <h1 class="col align-self-center" id="currentCitySearch">
+          Which City Would You Like to Search?
+        </h1>
+        <div class="container">
+          <div class="row justify-content-between">
+            <!-- days flexed container -->
+            <div class="container col-lg-2 col-sm-12 day mt-3">
+              <h2 class="row justify-content-center" id="dayOneName">Today</h2>
+              <div class="row justify-content-center">
+                  <img
+                    id="dayOneImage"
+                    src="./images/sunny.png"
+                    alt="Day One Weather"
+                  />
+              </div>
+              <p class="row justify-content-center" id="dayOneWeatherDescr">
+                partly cloudy
+              </p>
+              <div class="row justify-content-between">
+                <p id="dayOneHighTemp" class="temps high-temp col-4">H</p>
+                <p id="dayOneLowTemp" class="temps low-temp col-4">L</p>
+              </div>
+            </div>
+            <div class="container col-lg-2 col-sm-12 day mt-3">
+              <h2 class="row justify-content-center" id="dayTwoName">Tomorrow</h2>
+              <div class="row justify-content-center">
+                  <img
+                    id="dayTwoImage"
+                    src="./images/sunny.png"
+                    alt="Day Two Weather"
+                  />
+              </div>
+              <p class="row justify-content-center" id="dayTwoWeatherDescr">partly cloudy</p>
+              <div class="row justify-content-between">
+                <p id="dayTwoHighTemp" class="temps high-temp col-4">H</p>
+                <p id="dayTwoLowTemp" class="temps low-temp col-4">L</p>
+              </div>
+            </div>
+            <div class="container col-lg-2 col-sm-12 day mt-3">
+              <h2 class="row justify-content-center" id="dayThreeName">Day Three</h2>
+              <div class="row justify-content-center">
+                  <img
+                    id="dayThreeImage"
+                    src="./images/sunny.png"
+                    alt="Day Three Weather"
+                  />
+              </div>
+              <p class="row justify-content-center" id="dayThreeWeatherDescr">partly cloudy</p>
+              <div class="row justify-content-between">
+                <p id="dayThreeHighTemp" class="temps high-temp col-4">H</p>
+                <p id="dayThreeLowTemp" class="temps low-temp col-4">L</p>
+              </div>
+            </div>
+            <div class="container col-lg-2 col-sm-12 day mt-3">
+              <h2 class="row justify-content-center" id="dayFourName">Day Four</h2>
+              <div class="row justify-content-center">
+                  <img
+                    id="dayFourImage"
+                    src="./images/sunny.png"
+                    alt="Day Four Weather"
+                  />
+              </div>
+              <p class="row justify-content-center" id="dayFourWeatherDescr">partly cloudy</p>
+              <div class="row justify-content-between">
+                <p id="dayFourHighTemp" class="temps high-temp col-4">H</p>
+                <p id="dayFourLowTemp" class="temps low-temp col-4">L</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <script src="./app.js"></script>
-    
-</body>
+  </body>
 </html>
