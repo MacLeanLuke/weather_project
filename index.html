@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Current Weather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <nav>
+            <div class="flexed container">
+                <h1>Four Day Weather Forcast</h1>
+                <div id="cities" class="flexed container">
+                    <form class="flexed">
+                        <div class="search">
+                            <div>
+                                <label for="queryCity">Search City:</label>
+                                <input oninput="getCityName(this)" type="text" id="queryCity">
+                            </div>
+                        
+                                <div>
+                                    <label for="unit-choice">Show temperature in...</label>
+                                    <select id="unit-choice">
+                                        <option value="imperial">°F</option>
+                                        <option value="metric">°C</option>
+                                    </select>
+                                </div>
+                            </div>
+                    
+                        <button onclick="search(event)">Search</button>
+                    </form>
+                </div>
+            </div>
+          </nav>
+        <div class="flexed top container">
+            <h1 id="currentCitySearch"></h1>
+        </div>
+        <div class="days flexed container">
+            <div class="day">
+                <h1 id="dayOneName">Today</h1>
+                <img id="dayOneImage" src="./images/sunny.png" alt="Day One Weather">
+                <p id="dayOneWeatherDescr">partly cloudy</p>
+                <div class=" bottom-row flexed">
+                    <p id="dayOneHighTemp" class="temps high-temp">H</p>
+                    <p id="dayOneLowTemp" class="temps low-temp">L</p>
+                </div>
+            </div>
+            <div class="day">
+                <h1 id="dayTwoName">Tomorrow</h1>
+                <img id="dayTwoImage" src="./images/sunny.png" alt="Day Two Weather">
+                <p id="dayTwoWeatherDescr">partly cloudy</p>
+                <div class=" bottom-row flexed">
+                    <p id="dayTwoHighTemp" class="temps high-temp">H</p>
+                    <p id="dayTwoLowTemp"  class="temps low-temp">L</p>
+                </div>
+            </div>
+            <div class="day">
+                <h1 id="dayThreeName">Day Three</h1>
+                <img id="dayThreeImage" src="./images/sunny.png" alt="Day Three Weather">
+                <p id="dayThreeWeatherDescr">partly cloudy</p>
+                <div class=" bottom-row flexed">
+                    <p id="dayThreeHighTemp" class="temps high-temp">H</p>
+                    <p id="dayThreeLowTemp"  class="temps low-temp">L</p>
+                </div>
+            </div>
+            <div class="day">
+                <h1 id="dayFourName">Day Four</h1>
+                <img id="dayFourImage" src="./images/sunny.png" alt="Day Four Weather">
+                <p id="dayFourWeatherDescr">partly cloudy</p>
+                <div class=" bottom-row flexed">
+                    <p id="dayFourHighTemp" class="temps high-temp">H</p>
+                    <p id="dayFourLowTemp" class="temps low-temp">L</p>
+                </div>
+            </div>
+        </div>
+ 
+
+    <script src="./app.js"></script>
+    
+</body>
+</html>
